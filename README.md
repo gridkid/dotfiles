@@ -58,6 +58,11 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 > NOTE: A list of all used Vim Plugins see the ".vimrc" file. 
 > Install with ```:PluginInstall``
 
+### tmux - terminal multiplexer
+```bash
+brew install tmux
+```
+
 ### More
 ... also useful [Ruby](https://www.ruby-lang.org/) and [Node](https://nodejs.org)
 
@@ -88,6 +93,7 @@ ln -s ~/.dotfiles/.editorconfig ~/.editorconfig
 ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/.gitignore ~/.gitignore
 ln -s ~/.dotfiles/.vimrc ~/.vimrc
+ln -s ~/.dotfiles/.tmux.conf ~/.tmux.conf
 ln -s ~/.dotfiles/.zshrc ~/.zshrc
 ```
 

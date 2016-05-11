@@ -21,6 +21,7 @@ set nocompatible
   Plugin 'gmarik/Vundle.vim'
   Plugin 'altercation/vim-colors-solarized'
   Plugin 'cakebaker/scss-syntax.vim'
+  Plugin 'christoomey/vim-tmux-navigator'
   Plugin 'editorconfig/editorconfig-vim'
   Plugin 'itchyny/lightline.vim'
   Plugin 'tpope/vim-fugitive'
