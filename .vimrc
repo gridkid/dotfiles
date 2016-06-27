@@ -21,6 +21,7 @@ set nocompatible
   Plugin 'gmarik/Vundle.vim'
   Plugin 'altercation/vim-colors-solarized'
   Plugin 'cakebaker/scss-syntax.vim'
+  Plugin 'chriskempson/base16-vim'
   Plugin 'christoomey/vim-tmux-navigator'
   Plugin 'editorconfig/editorconfig-vim'
   Plugin 'itchyny/lightline.vim'
@@ -112,8 +113,10 @@ set nocompatible
 
 " Vim UI {
 
+  let base16colorspace=256        " Access colors present in 256 colorspace
+
   syntax on                       " Switch syntax highlighting on, when the terminal has colors
-  colorscheme solarized           " Load a colorscheme
+  colorscheme base16-tomorrow     " Load a colorscheme (eg. solarized)
 
   set background=dark             " Assume a dark background
   set backspace=indent,eol,start  " Allow backspacing over everything in insert mode
