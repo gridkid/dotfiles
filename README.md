@@ -8,6 +8,8 @@ My OS X dotfiles. For now a very basic collection for Z shell and Vim.
 ### iTerm2 (recommended)
 [iTerm 2](https://www.iterm2.com/downloads.html) a recommended replacement for OS X’s default Terminal 
 
+> NOTE: For use of a [Base16 theme](https://github.com/chriskempson/base16) with "256" colorspace support, the [Base16 Shell](https://github.com/chriskempson/base16-shell) script must be installed.
+
 ### Command Line Tools
 
 ```bash
@@ -29,10 +31,10 @@ curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | 
 ```bash
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-brew install caskroom/cask/brew-cask
+brew tap caskroom/cask
 
 brew doctor
-brew update
+brew update; brew cleanup; brew cask cleanup
 ```
 
 ### Git
@@ -42,6 +44,11 @@ brew install git
 
 git config --global user.name "Your Name"
 git config --global user.email "youremail@domain.com"
+```
+
+### tmux - terminal multiplexer
+```bash
+brew install tmux
 ```
 
 ### Vim with if\_lua
@@ -57,11 +64,6 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 > NOTE: A list of all used Vim Plugins see the ".vimrc" file. 
 > Install with ```:PluginInstall``
-
-### tmux - terminal multiplexer
-```bash
-brew install tmux
-```
 
 ### More
 ... also useful [Ruby](https://www.ruby-lang.org/) and [Node](https://nodejs.org)
