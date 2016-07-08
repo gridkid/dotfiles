@@ -41,9 +41,6 @@ brew update; brew cleanup; brew cask cleanup
 
 ```bash
 brew install git
-
-git config --global user.name "Your Name"
-git config --global user.email "youremail@domain.com"
 ```
 
 ### tmux - terminal multiplexer
@@ -57,14 +54,6 @@ brew install tmux
 brew install vim --with-lua --with-override-system-vim
 ```
 
-#### Vundle - Vim plugin manager
-```bash
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-```
-
-> NOTE: A list of all used Vim Plugins see the ".vimrc" file. 
-> Install with ```:PluginInstall``
-
 ### More
 ... also useful [Ruby](https://www.ruby-lang.org/) and [Node](https://nodejs.org)
 
@@ -72,7 +61,6 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ## Installation
 
 Step 1.) Clone the repository
-
 ```bash
 git clone https://github.com/gridkid/dotfiles ~/.dotfiles
 ```
@@ -97,6 +85,28 @@ ln -s ~/.dotfiles/.gitignore ~/.gitignore
 ln -s ~/.dotfiles/.vimrc ~/.vimrc
 ln -s ~/.dotfiles/.tmux.conf ~/.tmux.conf
 ln -s ~/.dotfiles/.zshrc ~/.zshrc
+```
+
+Step 4.) Install Vundle - Vim plugin manager
+```bash
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+```
+
+> NOTE: A list of all used Vim Plugins see the ".vimrc" file. 
+> Install with ```:PluginInstall``
+
+
+## Final settings
+
+### Git Committer Information
+Create a '.gitconfig.user' file in the home directory with git credentials such as:
+```
+[user]
+  name = Your Name
+  email = youremail@domain.com
+
+[credential]
+  helper = osxkeychain
 ```
 
 
