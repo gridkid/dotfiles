@@ -103,35 +103,35 @@ set nocompatible
 
 " General Settings {
 
-  set autoread                    " Reload files changed outside of Vim
-  set encoding=utf-8              " Character encoding
-  set mouse=a                     " Allow mouse scrolling in xTerm
-  set nobackup                    " Do not keep a backup file, use versions instead
-  set noswapfile                  " Do not keep a swp file
+  set autoread                      " Reload files changed outside of Vim
+  set encoding=utf-8                " Character encoding
+  set mouse=a                       " Allow mouse scrolling in xTerm
+  set nobackup                      " Do not keep a backup file, use versions instead
+  set noswapfile                    " Do not keep a swp file
 
 " }
 
 " Vim UI {
 
-  let base16colorspace=256        " Access colors present in 256 colorspace
+  let base16colorspace=256          " Access colors present in 256 colorspace
 
-  syntax on                       " Switch syntax highlighting on, when the terminal has colors
-  colorscheme base16-tomorrow     " Load a colorscheme (eg. solarized)
+  syntax on                         " Switch syntax highlighting on, when the terminal has colors
+  colorscheme base16-tomorrow-night " Load a colorscheme (eg. solarized)
 
-  set background=dark             " Assume a dark background
-  set backspace=indent,eol,start  " Allow backspacing over everything in insert mode
-  set cursorline                  " Highlight current line
-  set laststatus=2                " Show status line
-"  set number                      " Show line numbers
-  set relativenumber              " Show relative line nubers (see how far your commands will go)
-  set ruler                       " Show current line and column position in file
-  set showcmd                     " Show incomplete cmds down the bottom
-"  set showmatch                   " Highlight matching brackets [{()}] (with or without, nothing happens)
-"  set showmode                    " Show current mode down the bottom
-  set noshowmode                  " ... don't show current mode (statusline)
-  set splitbelow                  " Open new split panes below the current
-  set splitright                  " Open new split panes to the right of the current
-  set t_Co=256                    " Enable 256 colors
+  set background=dark               " Assume a dark background
+  set backspace=indent,eol,start    " Allow backspacing over everything in insert mode
+  set cursorline                    " Highlight current line
+  set laststatus=2                  " Show status line
+"  set number                        " Show line numbers
+  set relativenumber                " Show relative line nubers (see how far your commands will go)
+  set ruler                         " Show current line and column position in file
+  set showcmd                       " Show incomplete cmds down the bottom
+"  set showmatch                     " Highlight matching brackets [{()}] (with or without, nothing happens)
+"  set showmode                      " Show current mode down the bottom
+  set noshowmode                    " ... don't show current mode (statusline)
+  set splitbelow                    " Open new split panes below the current
+  set splitright                    " Open new split panes to the right of the current
+  set t_Co=256                      " Enable 256 colors
 
   " Search {
 
@@ -147,30 +147,30 @@ set nocompatible
 
 " Formatting (can overwride by editorconfig) {
 
-  set nowrap                      " Don't wrap long lines
+  set nowrap                        " Don't wrap long lines
 
-  set autoindent                  " Indent at the same level of the previous line
-  set expandtab                   " Tabs are spaces, not tabs
-  set shiftwidth=2                " Use indents of 2 spaces (used for auto indenting)
-  set smarttab                    " An <Tab> in front of a line inserts blanks according to shiftwidth
-  set softtabstop=2               " Let <BS> delete indent
-  set tabstop=2                   " An indentation every four columns
+  set autoindent                    " Indent at the same level of the previous line
+  set expandtab                     " Tabs are spaces, not tabs
+  set shiftwidth=2                  " Use indents of 2 spaces (used for auto indenting)
+  set smarttab                      " An <Tab> in front of a line inserts blanks according to shiftwidth
+  set softtabstop=2                 " Let <BS> delete indent
+  set tabstop=2                     " An indentation every four columns
 
 " }
 
 " Key (re)Mappings {
 
   " Switching buffers
-  nnoremap <up> :bfirst<cr>       " Go to first file
-  nnoremap <down> :blast<cr>      " Go to last file
-  nnoremap <left> :bp<cr>         " Jump to previous file
-  nnoremap <right> :bn<cr>        " Jump to next file
+  nnoremap <up> :bfirst<cr>         " Go to first file
+  nnoremap <down> :blast<cr>        " Go to last file
+  nnoremap <left> :bp<cr>           " Jump to previous file
+  nnoremap <right> :bn<cr>          " Jump to next file
 
   " Switching windows
-  nnoremap <tab> <C-w><C-w>       " Jump to next window
-  nnoremap <S-tab> <C-w>W         " Jump to previous window
+  nnoremap <tab> <C-w><C-w>         " Jump to next window
+  nnoremap <S-tab> <C-w>W           " Jump to previous window
 
-  let mapleader = ','             " Change mapleader key
+  let mapleader = ','               " Change mapleader key
 
   nnoremap <leader>ev :vsplit $MYVIMRC<CR> " edit the .vimrc
   nnoremap <leader>sv :source $MYVIMRC<CR> " source the .vimrc
