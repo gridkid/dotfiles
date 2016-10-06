@@ -96,6 +96,10 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 # Load rbenv every time when open a terminal
 eval "$(rbenv init -)"
 
+# nvm
+export NVM_DIR="/Users/Rene/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-tomorrow-night.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
