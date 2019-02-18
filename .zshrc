@@ -92,14 +92,14 @@ source $ZSH/oh-my-zsh.sh
 # Default is ~/Applications.
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-# rbenv
-# Load rbenv every time when open a terminal
-eval "$(rbenv init -)"
-
 # nvm
-export NVM_DIR="/Users/Rene/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-tomorrow-night.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
+# fzf - command-line fuzzy finder
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
