@@ -7,39 +7,37 @@
 set nocompatible
 
 
-" Vundle configuration {
+" vim-plug configuration {
 
-  filetype off " required
+  " Automate the 'vim-plug' installation process
+  if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  endif
 
-  " set the runtime path to include Vundle and initialize
-  set rtp+=~/.vim/bundle/Vundle.vim
-  call vundle#begin()
-  " alternatively, pass a path where Vundle should install plugins
-  "call vundle#begin('~/some/path/here')
+  " Specify a directory for plugins
+  " - Avoid using standard Vim directory names like 'plugin'
+  call plug#begin('~/.vim/plugged')
 
-  " let Vundle manage Vundle, required
-  Plugin 'VundleVim/Vundle.vim'
+  " On-demand loading
+  Plug 'chriskempson/base16-vim'
+  Plug 'christoomey/vim-tmux-navigator'
+  Plug 'editorconfig/editorconfig-vim'
+  Plug 'itchyny/lightline.vim'
+  Plug '/usr/local/opt/fzf'
+  Plug 'junegunn/fzf.vim'
+  Plug 'tpope/vim-fugitive'
 
-  Plugin 'altercation/vim-colors-solarized'
-  Plugin 'cakebaker/scss-syntax.vim'
-  Plugin 'chriskempson/base16-vim'
-  Plugin 'christoomey/vim-tmux-navigator'
-  Plugin 'editorconfig/editorconfig-vim'
-  Plugin 'itchyny/lightline.vim'
-  Plugin 'tpope/vim-fugitive'
-
-  " All of your Plugins must be added before the following line
-  call vundle#end() " required
-  filetype plugin indent on " required
-  " To ignore plugin indent changes, instead use:
-  "filetype plugin on
+  " Initialize plugin system
+  call plug#end()
 
 " }
 
 " Plugin configuration {
 
   let g:lightline = {
-        \ 'colorscheme': 'solarized_dark',
+        \ 'colorscheme': 'solarized',
         \ 'active': {
         \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ],
         \   'right': [ [ 'lineinfo' ], [ 'fileformat', 'fileencoding', 'filetype' ] ]
@@ -105,6 +103,7 @@ set nocompatible
 " General Settings {
 
   set autoread                      " Reload files changed outside of Vim
+  set backspace=indent,eol,start    " Allow backspacing over everything in insert mode
   set encoding=utf-8                " Character encoding
   set mouse=a                       " Allow mouse scrolling in xTerm
   set nobackup                      " Do not keep a backup file, use versions instead
@@ -120,16 +119,17 @@ set nocompatible
   colorscheme base16-tomorrow-night " Load a colorscheme (eg. solarized)
 
   set background=dark               " Assume a dark background
-  set backspace=indent,eol,start    " Allow backspacing over everything in insert mode
   set cursorline                    " Highlight current line
   set laststatus=2                  " Show status line
-"  set number                        " Show line numbers
+  set number                        " Show line number(s)
   set relativenumber                " Show relative line nubers (see how far your commands will go)
   set ruler                         " Show current line and column position in file
+  set scrolloff=5                   " Number of screen lines to keep above and below the cursor
   set showcmd                       " Show incomplete cmds down the bottom
-"  set showmatch                     " Highlight matching brackets [{()}] (with or without, nothing happens)
-"  set showmode                      " Show current mode down the bottom
+  set showmatch                     " Highlight matching brackets [{()}]
+""  set showmode                      " Show current mode down the bottom
   set noshowmode                    " ... don't show current mode (statusline)
+  set sidescroll=5                  " Number of screen columns to keep to the left and right of the cursor
   set splitbelow                    " Open new split panes below the current
   set splitright                    " Open new split panes to the right of the current
   set t_Co=256                      " Enable 256 colors
@@ -137,7 +137,7 @@ set nocompatible
   " Search {
 
     set hlsearch                    " Highlight search results
-    " set nohlsearch                  " Don’t keep results highlighted after search
+""    set nohlsearch                  " Don’t keep results highlighted after search
     set incsearch                   " Find as you type
     set ignorecase                  " Case insensitive search
     set smartcase                   " ... don't ignore Capitals when present

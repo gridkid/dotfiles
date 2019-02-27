@@ -43,6 +43,15 @@ brew update; brew cleanup; brew cask cleanup
 brew install git
 ```
 
+### fzf - A command-line fuzzy finder
+
+```bash
+brew install fzf
+
+# To install useful key bindings and fuzzy completion:
+$(brew --prefix)/opt/fzf/install
+```
+
 ### tmux - terminal multiplexer
 ```bash
 brew install tmux
@@ -87,13 +96,16 @@ ln -s ~/.dotfiles/.tmux.conf ~/.tmux.conf
 ln -s ~/.dotfiles/.zshrc ~/.zshrc
 ```
 
-Step 4.) Install Vundle - Vim plugin manager
-```bash
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-```
+Step 4.) Install vim-plug - Vim plugin manager
 
+Currently there is **no need** to install vim-plug with the command below. The installation will be checked at the start of VIM and if necessary executed.
+```bash
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+> 
 > NOTE: A list of all used Vim Plugins see the ".vimrc" file. 
-> Install with ```:PluginInstall``
+> Install with ```:PlugInstall``` and check the status with ```:PlugStatus```
 
 
 ## Final settings
